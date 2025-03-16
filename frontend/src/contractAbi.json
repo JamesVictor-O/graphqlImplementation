@@ -1,0 +1,229 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "erc20Contract",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "symbol",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "deployer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "totalSupply",
+        "type": "uint256"
+      }
+    ],
+    "name": "ERC20TokenDeployed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "erc721Contract",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "symbol",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "deployer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "name": "ERC721TokenDeployed",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "string", "name": "_symbol", "type": "string" },
+      { "internalType": "uint256", "name": "_totalSupply", "type": "uint256" }
+    ],
+    "name": "deployErc20",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "string", "name": "_symbol", "type": "string" },
+      { "internalType": "address", "name": "_deployer", "type": "address" },
+      { "internalType": "string", "name": "_url", "type": "string" }
+    ],
+    "name": "deployErc721",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "deployedErc20Count",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "deployedErc721Count",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "erc20Contracts",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "erc721Contracts",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "user", "type": "address" }
+    ],
+    "name": "getUserDeployedErc20",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "symbol", "type": "string" },
+          { "internalType": "address", "name": "deployer", "type": "address" },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "deployedErc20",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct FactoryContract.ERC20TokenDetails[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "user", "type": "address" }
+    ],
+    "name": "getUserDeployedErc721",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "symbol", "type": "string" },
+          { "internalType": "address", "name": "deployer", "type": "address" },
+          { "internalType": "string", "name": "url", "type": "string" },
+          {
+            "internalType": "address",
+            "name": "deployedNft",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct FactoryContract.ERC721TokenDetails[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "isErc20",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "isErc721",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "userDeployedErc20",
+    "outputs": [
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "symbol", "type": "string" },
+      { "internalType": "address", "name": "deployer", "type": "address" },
+      { "internalType": "uint256", "name": "totalSupply", "type": "uint256" },
+      { "internalType": "address", "name": "deployedErc20", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "userDeployedErc721",
+    "outputs": [
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "symbol", "type": "string" },
+      { "internalType": "address", "name": "deployer", "type": "address" },
+      { "internalType": "string", "name": "url", "type": "string" },
+      { "internalType": "address", "name": "deployedNft", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
